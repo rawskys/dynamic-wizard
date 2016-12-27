@@ -1,0 +1,15 @@
+Personal Data Form
+
+Quest: Create simple website based on the data stored in data.json.
+
+1.HomePage contains dynamically created form with input fields described in data.json/homePage. 
+On top of the page the title should be displayed. The main content of the page is mainForm when submitted redirects the app to the second page - confirmationPage.
+Example: homepage.jpg
+
+2.ConfirmationPage displays all data filled in on the homepage. Additionally displays the title on top of the page and checkbox underneath the data from previous mainForm with confirm button. Once checkbox is being checked confirm button redirects to the 3 step of the app – thankYouPage.
+Example: confirmpage.jpg
+
+3.ThankYouPage displays the name and surname before the title from data.json/thankYouPage.
+Example: thankyoupage.jpg
+
+

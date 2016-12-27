@@ -1,0 +1,52 @@
+{
+  "homePage": {
+    "title": "Please fill in the form below",
+    "mainForm": {
+      "name": {
+        "type": "text",
+        "label": "Name",
+        "placeholder": "What is your name?",
+        "error": "The name is required",
+        "required": true
+      },
+      "surname": {
+        "type": "text",
+        "label": "Surname",
+        "placeholder": "What is your surname?",
+        "error": "The surname is required",
+        "required": true
+      },
+      "email": {
+        "type": "email",
+        "label": "E-mail",
+        "placeholder": "What is your e-mail?",
+        "error": "The email is required",
+        "required": true
+      },
+      "address": {
+        "title": "Address",
+        "street": {
+          "type": "text",
+          "label": "street"
+        },
+        "countryCode": {
+          "type": "text",
+          "label": "Country code",
+          "pattern": "[A-Za-z]{2}"
+        }
+      }
+    }
+  },
+  "confirmationPage": {
+    "title": "Please check if data below is correct.",
+    "confirm": {
+      "type": "checkbox",
+      "label": "I confirm the data I filled in is correct.",
+      "required": true,
+      "error": "You have to confirm by tick the checkbox"
+    }
+  },
+  "thankYouPage": {
+    "title": "Thank you for use our data form."
+  }
+}
