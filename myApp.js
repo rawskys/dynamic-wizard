@@ -19,10 +19,13 @@ myApp.directive('dynamicForm', function($compile) {
 			})
 		}],
 		link: function (scope, element) {
-			var template = '<input ' +
-				'ng-repeat="input in configuration.homePage.mainForm" ' +
+			var template = '<h1>{{configuration.homePage.title}}</h1>' +
+				'<div ng-repeat="input in configuration.homePage.mainForm">' +
+				'<label>{{input.label}}</label>' +
+				'<input ' +
 				'placeholder="{{input.placeholder}}" ' +
-				'type="{{input.type}}" />'
+				'type="{{input.type}}" />' +
+				'</div>'
 			element.replaceWith($compile(template)(scope))
 		},
 		template: '<b>To be replaced...</b>'
