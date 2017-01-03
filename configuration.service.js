@@ -1,10 +1,16 @@
-angular
-	.module('dynamicWizard')
-	.service('configuration' , ConfigurationService)
+(function() {
+	'use strict'
 
-function ConfigurationService($http) {
-	return {
-		fetch: function() {
+	angular
+		.module('app')
+		.service('configuration' , ConfigurationService)
+
+	function ConfigurationService($http) {
+		return {
+			fetch: fetchConfigurationFileAsPromise
+		}
+
+		function fetchConfigurationFileAsPromise() {
 			return $http({
 					url: 'data.json',
 					responseType: 'json'
@@ -14,5 +20,5 @@ function ConfigurationService($http) {
 				})
 		}
 	}
-}
+})()
 

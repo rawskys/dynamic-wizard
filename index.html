@@ -1,16 +1,17 @@
-<html ng-app="dynamicWizard">
+<html ng-app="app">
 	<head>
 		<meta charset="UTF-8">
 		<title>Angular</title>
 		<script src="angular.js"></script>
 		<script src="angular-route.js"></script>
-		<script src="dynamicWizard.module.js"></script>
+		<script src="app.module.js"></script>
 		<script src="configuration.service.js"></script>
-		<script src="dynamicWizard.controller.js"></script>
+		<script src="home.controller.js"></script>
 		<script src="dynamicWizard.directive.js"></script>
+		<script src="route-config.js"></script>
 	</head>
 	<body>
-		<dynamic-wizard />
+		<div ng-view />
 	</body>
 </html>
 

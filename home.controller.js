@@ -3,9 +3,9 @@
 
 	angular
 		.module('app')
-		.controller('DynamicWizard', ['configuration', DynamicWizardController])
+		.controller('HomeController', ['configuration', HomeController])
 
-	function DynamicWizardController (configurationService) {
+	function HomeController (configurationService) {
 		var vm = this
 		vm.title = 'Most dynamic wizard ever!'
 
@@ -14,6 +14,7 @@
 		function loadConfiguration() {
 			configurationService.fetch().then(function(configuration) {
 				vm.title = configuration.homePage.title
+				alert(vm.title)
 			})
 		}
 	}
