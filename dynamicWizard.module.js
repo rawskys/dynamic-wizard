@@ -1,0 +1,2 @@
+angular.module('dynamicWizard', ['ngRoute'])
+

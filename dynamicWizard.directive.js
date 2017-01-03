@@ -1,27 +1,10 @@
-var dynamicWizard = angular.module('dynamicWizard', [])
+angular
+	.module('dynamicWizard')
+	.directive('dynamicWizard', DynamicWizardDirective)
 
-dynamicWizard.service('configurationService' , function($http) {
+function DynamicWizardDirective($compile) {
 	return {
-		fetch: function() {
-			return $http.get('data.json')
-				.then(function(response) {
-					return response.data
-				})
-		}
-	}
-})
-
-dynamicWizard.controller('wizard', ['configurationService', function(configurationService) {
-	this.title = 'Most dynamic wizard ever!'
-	var wizard = this
-	configurationService.fetch().then(function(configuration) {
-		wizard.title = configuration.homePage.title
-	})
-}])
-
-dynamicWizard.directive('dynamicWizard', function($compile) {
-	return {
-		controller: 'wizard',
+		controller: 'dynamicWizard',
 		compileNowhere: function () {
 		},
 		link: function (scope, element, attributes, controller) {
@@ -40,5 +23,5 @@ dynamicWizard.directive('dynamicWizard', function($compile) {
 		},
 		template: '<b>Title from scope:</b> {{title}}'
 	}
-})
+}
 
