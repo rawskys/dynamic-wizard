@@ -1,6 +1,6 @@
-var myApp = angular.module('myApp', [])
+var dynamicWizard = angular.module('dynamicWizard', [])
 
-myApp.service('configurationService' , function($http) {
+dynamicWizard.service('configurationService' , function($http) {
 	return {
 		fetch: function() {
 			return $http.get('data.json')
@@ -11,14 +11,24 @@ myApp.service('configurationService' , function($http) {
 	}
 })
 
-myApp.directive('dynamicForm', function($compile) {
+dynamicWizard.controller('wizard', ['configurationService', function(configurationService) {
+	this.title = 'Most dynamic wizard ever!'
+	var wizard = this
+	configurationService.fetch().then(function(configuration) {
+		wizard.title = configuration.homePage.title
+	})
+}])
+
+dynamicWizard.directive('dynamicWizard', function($compile) {
 	return {
-		controller: ['$scope', 'configurationService', function($scope, configurationService) {
-			configurationService.fetch().then(function(configuration) {
-				$scope.configuration = configuration
-			})
-		}],
-		link: function (scope, element) {
+		controller: 'wizard',
+		compileNowhere: function () {
+		},
+		link: function (scope, element, attributes, controller) {
+			alert(element.toString())
+			element.addClass('aaa')
+			element.append('fff')
+			var wizard = angular.element('<h1>' + controller.title + '</h1>')
 			var template = '<h1>{{configuration.homePage.title}}</h1>' +
 				'<div ng-repeat="input in configuration.homePage.mainForm">' +
 				'<label>{{input.label}}</label>' +
@@ -26,9 +36,9 @@ myApp.directive('dynamicForm', function($compile) {
 				'placeholder="{{input.placeholder}}" ' +
 				'type="{{input.type}}" />' +
 				'</div>'
-			element.replaceWith($compile(template)(scope))
+			element.replaceWith(wizard)
 		},
-		template: '<b>To be replaced...</b>'
+		template: '<b>Title from scope:</b> {{title}}'
 	}
 })
 
