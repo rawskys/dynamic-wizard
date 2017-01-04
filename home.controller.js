@@ -3,20 +3,12 @@
 
 	angular
 		.module('app')
-		.controller('HomeController', ['configuration', HomeController])
+		.controller('HomeController', HomeController)
 
-	function HomeController (configurationService) {
-		var vm = this
-		vm.title = 'Most dynamic wizard ever!'
+	HomeController.$inject = ['wizard']
 
-		loadConfiguration()
-
-		function loadConfiguration() {
-			configurationService.fetch().then(function(configuration) {
-				vm.title = configuration.homePage.title
-				alert(vm.title)
-			})
-		}
+	function HomeController (wizard) {
+		this.title = wizard.homePage.title
 	}
 })()
 

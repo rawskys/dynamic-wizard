@@ -11,12 +11,14 @@
 				template: '<dynamic-wizard page=vm />'
 			})
 			.when('/confirmPage', {
-				template: '<dynamic-wizard />',
-				controller: 'ConfirmController'
+				controller: 'ConfirmController',
+				controllerAs: 'vm',
+				template: '<dynamic-wizard page=vm />'
 			})
 			.when('/thankYouPage', {
-				template: '<dynamic-wizard />',
-				controller: 'ThankYouController'
+				controller: 'ThankYouController',
+				controllerAs: 'vm',
+				template: '<dynamic-wizard page=vm />'
 			})
 			.otherwise('/homePage')
 	}

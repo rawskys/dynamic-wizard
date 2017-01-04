@@ -10,13 +10,13 @@
 			scope: {
 				page: '='
 			},
-			link: function (scope, element, attributes, controller) {
+			links: function (scope, element, attributes, controller) {
 				console.log(scope)
 				alert(scope.title)
 				element.addClass('aaa')
 				element.append('fff')
-				var wizard = angular.element('<h1>' + scope.page.title + '</h1>')
-				var template = '<h1>{{configuration.homePage.title}}</h1>' +
+				var wizard = angular.element('<h1>a{{page.title}}b</h1>')
+				var template = 'aa<h1>{{configuration.homePage.title}}</h1>' +
 					'<div ng-repeat="input in configuration.homePage.mainForm">' +
 					'<label>{{input.label}}</label>' +
 					'<input ' +
@@ -25,7 +25,7 @@
 					'</div>'
 				element.replaceWith(wizard)
 			},
-			template: '<b>shouldnt be displayed...</b>'
+			template: '<b>{{page.title}}aaaa</b>'
 		}
 	}
 })()
