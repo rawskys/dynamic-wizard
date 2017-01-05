@@ -9,6 +9,8 @@
 
 	function wizard(config) {
 		this.homePage = config.homePage
+		this.confirmPage = config.confirmationPage
+		this.thankYouPage = config.thankYouPage
 	}
 })()
 

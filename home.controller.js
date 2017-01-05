@@ -9,6 +9,7 @@
 
 	function HomeController (wizard) {
 		this.title = wizard.homePage.title
+		this.nextPageAddress = '#!/confirmPage'
 	}
 })()
 
