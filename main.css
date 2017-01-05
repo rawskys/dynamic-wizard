@@ -1,0 +1,61 @@
+body {
+	margin: 0
+}
+
+.dynamicWizardPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center
+}
+
+div {
+	width: 100%
+}
+
+h2 {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+}
+
+h2 span {
+}
+
+.label {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+}
+
+label {
+	margin: 0.5em;
+}
+
+.input {
+	width: 50%
+}
+
+.inputPreview {
+	padding: 0.5em;
+	font-weight: bold;
+	width: 50%;
+}
+
+form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center
+}
+
+.labeledInput {
+	width: 100%;
+	margin: 0.5em;
+	display: flex;
+	flex-direction: row
+}
+
+input {
+	width: 400
+}
+

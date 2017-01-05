@@ -7,6 +7,7 @@
 
 	function DynamicWizardDirective($compile) {
 		return {
+			replace: true,
 			scope: {
 				page: '='
 			},

@@ -1,5 +1,7 @@
-<div>
-	<label>{{input.label}}</label>
-	<input type="{{input.type}}" placeholder="{{input.placeholder}}" ng-model="input.value" />
+<div class="labeledInput">
+	<div class="label"><label for="{{name}}">{{input.label}}:</label></div>
+	<div class="input">
+		<input id="{{name}}" type="{{input.type}}" placeholder="{{input.placeholder}}" ng-model="input.value" />
+	</div>
 </div>
 

@@ -7,8 +7,10 @@
 
 	function LabeledInput() {
 		return {
+			replace: true,
 			scope: {
-				input: '='
+				input: '=',
+				name: '@'
 			},
 			templateUrl: 'labeledInput.html'
 		}

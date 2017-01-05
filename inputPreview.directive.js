@@ -7,6 +7,7 @@
 
 	function InputPreview() {
 		return {
+			replace: true,
 			scope: {
 				input: '='
 			},

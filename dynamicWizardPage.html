@@ -1,37 +1,34 @@
 <!DOCTYPE html>
-<div>
-<h1>{{page.title}}</h1>
-<div ng-if="page.mainFormPreviewed">
-	<div ng-repeat="input in page.mainForm" ng-switch="input.title">
-		<div ng-switch-when="undefined">
-			<input-preview input="input" />
-		</div>
-		<div ng-switch-default="ng-switch-default">
-			<h2>{{input.title}}</h2>
-			<div ng-repeat="subinput in input" ng-if="subinput.type">
-				<input-preview input="subinput" />
+<div class="dynamicWizardPage">
+	<h1>{{page.title}}</h1>
+	<div ng-if="page.mainFormPreviewed">
+		<div ng-repeat="input in page.mainForm" ng-switch="input.title">
+			<div ng-switch-when="undefined">
+				<input-preview input="input" />
+			</div>
+			<div ng-switch-default="ng-switch-default">
+				<h2>{{input.title}}</h2>
+				<div ng-repeat="subinput in input" ng-if="subinput.type">
+					<input-preview input="subinput" />
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<form ng-if="page.form" action="{{page.nextPageAddress}}">
-	<div ng-repeat="input in page.form" ng-switch="input.title">
-		<div ng-switch-when="undefined">
-			<labeled-input input="input" />
-		</div>
-		<div ng-switch-default="ng-switch-default">
-			<h2>{{input.title}}</h2>
-			<div ng-repeat="subinput in input" ng-if="subinput.type">
-				<labeled-input input="subinput" />
+	<form ng-if="page.form" action="{{page.nextPageAddress}}">
+		<div ng-repeat="(inputName, input) in page.form" ng-switch="input.title">
+			<div ng-switch-when="undefined">
+				<labeled-input input="input" name="{{inputName}}" />
+			</div>
+			<div ng-switch-default="ng-switch-default">
+				<h2><span>{{input.title}}</span></h2>
+				<div ng-repeat="(subinputName, subinput) in input" ng-if="subinput.type">
+					<labeled-input input="subinput" name="{{subinputName}}" />
+				</div>
 			</div>
 		</div>
-	</div>
-	<input type="submit" value="Submit" />
-</form>
+		<input id="submit" type="submit" value="Submit" />
+	</form>
 
-
-
-
-<a href="#">Go home</a> (development mode only)
+	<a href="#">Go home</a> (development mode only)
 </div>
 
