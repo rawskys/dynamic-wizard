@@ -10,7 +10,7 @@
 			scope: {
 				page: '='
 			},
-			template: '<h1>{{page.title}}</h1><form action="{{page.nextPageAddress}}"><input type="submit" value="Go" /></form>'
+			templateUrl: 'dynamicWizardPage.html'
 		}
 	}
 })()

@@ -27,7 +27,7 @@
         "title": "Address",
         "street": {
           "type": "text",
-          "label": "street"
+          "label": "Street"
         },
         "countryCode": {
           "type": "text",

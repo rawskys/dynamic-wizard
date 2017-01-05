@@ -9,7 +9,6 @@
 
 	function ThankYoutroller (wizard) {
 		this.title = wizard.thankYouPage.title
-		this.nextPageAddress = ''
 	}
 })()
 
