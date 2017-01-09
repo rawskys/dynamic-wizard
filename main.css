@@ -18,9 +18,6 @@ h2 {
 	width: 50%;
 }
 
-h2 span {
-}
-
 .label {
 	display: flex;
 	justify-content: flex-end;
@@ -32,7 +29,9 @@ label {
 }
 
 .input {
-	width: 50%
+	width: 50%;
+	display: flex;
+	align-items: center;
 }
 
 .inputPreview {
@@ -49,13 +48,24 @@ form {
 }
 
 .labeledInput {
-	width: 100%;
-	margin: 0.5em;
+	width: 98%;
+	margin: 0 1%;
+	margin-bottom: 0.5em;
 	display: flex;
 	flex-direction: row
 }
 
 input {
-	width: 400
+	width: 50%
+}
+
+.error {
+	display: none;
+}
+
+input.ng-invalid + .error {
+	display: block;
+	width: 49%;
+	margin-left: 1%;
 }
 
