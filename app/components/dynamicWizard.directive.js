@@ -11,7 +11,7 @@
 			scope: {
 				page: '='
 			},
-			templateUrl: 'dynamicWizardPage.html'
+			templateUrl: 'app/components/dynamicWizardPage.html'
 		}
 	}
 })()

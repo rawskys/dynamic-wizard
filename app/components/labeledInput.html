@@ -1,0 +1,15 @@
+<div class="labeledInput">
+	<div class="label"><label for="{{$ctrl.name}}">{{$ctrl.input.label}}:</label></div>
+	<div class="input">
+		<input
+			id="{{$ctrl.name}}"
+			type="{{$ctrl.input.type}}"
+			placeholder="{{$ctrl.input.placeholder}}"
+			ng-model="$ctrl.input.value"
+			ng-required="$ctrl.input.required" />
+		<div class="error">
+			{{$ctrl.input.error}}
+		</div>
+	</div>
+</div>
+
