@@ -8,10 +8,9 @@
 	HomeController.$inject = ['wizard']
 
 	function HomeController (wizard) {
-		var vm = this
-		vm.title = wizard.homePage.title
-		vm.form = wizard.mainForm
-		vm.nextPageAddress = '#!/confirmPage'
+		this.title = wizard.homePage.title
+		this.form = wizard.mainForm
+		this.nextPageAddress = '#!/confirmPage'
 	}
 })()
 
