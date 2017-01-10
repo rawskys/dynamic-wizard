@@ -8,17 +8,17 @@
 			.when('/homePage', {
 				controller: 'HomeController',
 				controllerAs: 'vm',
-				template: '<dynamic-wizard page=vm />'
+				template: '<wizard-page page=vm></wizard-page>'
 			})
 			.when('/confirmPage', {
 				controller: 'ConfirmController',
 				controllerAs: 'vm',
-				template: '<dynamic-wizard page=vm />'
+				template: '<wizard-page page=vm></wizard-page>'
 			})
 			.when('/thankYouPage', {
 				controller: 'ThankYouController',
 				controllerAs: 'vm',
-				template: '<dynamic-wizard page=vm />'
+				template: '<wizard-page page=vm></wizard-page>'
 			})
 			.otherwise('/homePage')
 	}

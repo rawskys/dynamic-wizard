@@ -1,7 +1,7 @@
 <div class="dynamicWizardPage">
-	<h1>{{page.title}}</h1>
-	<div ng-if="page.mainFormPreviewed">
-		<div ng-repeat="input in page.mainForm" ng-switch="input.title">
+	<h1>{{$ctrl.page.title}}</h1>
+	<div ng-if="$ctrl.page.mainFormPreviewed">
+		<div ng-repeat="input in $ctrl.page.mainForm" ng-switch="input.title">
 			<div ng-switch-when="undefined">
 				<input-preview input="input" />
 			</div>
@@ -13,8 +13,8 @@
 			</div>
 		</div>
 	</div>
-	<form ng-if="page.form" action="{{page.nextPageAddress}}">
-		<div ng-repeat="(inputName, input) in page.form" ng-switch="input.title">
+	<form ng-if="$ctrl.page.form" action="{{$ctrl.page.nextPageAddress}}">
+		<div ng-repeat="(inputName, input) in $ctrl.page.form" ng-switch="input.title">
 			<div ng-switch-when="undefined">
 				<labeled-input input="input" name="{{inputName}}" />
 			</div>
