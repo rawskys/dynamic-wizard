@@ -15,7 +15,15 @@ module.exports = function(config) {
 			'app/components/wizardPage.directive.js',
 			'node_modules/angular-mocks/angular-mocks.js',
 			'app/**/*.spec.js'
-		]
+		],
+		reporters: ['progress', 'coverage'],
+		preprocessors: {
+			'app/**/!(*.spec).*': ['coverage']
+		},
+		coverageReporter: {
+			type: 'html',
+			dir: 'coverage/'
+		}
 	})
 }
 
